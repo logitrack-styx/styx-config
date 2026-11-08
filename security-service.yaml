@@ -1,4 +1,4 @@
-# Configuración COMÚN a todos los perfiles - security-service
+# ConfiguraciÃ³n COMÃšN a todos los perfiles - security-service
 spring:
   application:
     name: security-service
@@ -25,6 +25,7 @@ logging:
 security:
   jwt:
     issuer: ${JWT_ISSUER:logitrack-security}
+    access-token-ttl: ${JWT_ACCESS_TOKEN_TTL:3600}
     private-key-path: ${JWT_PRIVATE_KEY_LOCATION}
     public-key-path: ${JWT_PUBLIC_KEY_LOCATION}
 
