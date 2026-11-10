@@ -29,4 +29,8 @@ Los placeholders aparecen sin resolver (`${DB_PASSWORD}`): es lo esperado, los r
 
 ## Cambios
 
+Sprint 4 agrega el enrutamiento a Payment, los orígenes CORS por entorno y los flags de correo y asignación. Los clientes mantienen sus emisores JWT y las rutas legadas. Los parámetros SMTP, RabbitMQ y Mercado Pago se resuelven desde el entorno de cada cliente. Los valores predeterminados mantienen correo y mensajería deshabilitados, y seleccionan FAKE para pagos.
+
+El Compose de backend monta este repositorio en un Config Server con perfil native. La prueba de Shipment `scripts/test-sprint4-backend.ps1` verifica el comportamiento de estas propiedades mediante Gateway, Security, Shipment, Courier y Payment.
+
 Los clientes leen la configuración al arrancar. Tras un commit a `main`, reiniciá el servicio que quieras actualizar.

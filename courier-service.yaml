@@ -5,6 +5,11 @@ spring:
   datasource:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:localhost}
+    port: ${SPRING_RABBITMQ_PORT:5672}
+    username: ${SPRING_RABBITMQ_USERNAME:}
+    password: ${SPRING_RABBITMQ_PASSWORD:}
   jpa:
     hibernate:
       ddl-auto: ${JPA_DDL_AUTO:update}
@@ -13,6 +18,10 @@ spring:
       resourceserver:
         jwt:
           public-key-location: ${JWT_PUBLIC_KEY_LOCATION}
+
+courier:
+  assignment:
+    messaging-enabled: ${ASSIGNMENT_MESSAGING_ENABLED:false}
 
 server:
   port: 8082

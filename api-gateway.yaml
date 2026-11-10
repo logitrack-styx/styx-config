@@ -37,6 +37,10 @@ spring:
               filters:
                 - 'RewritePath=^/api/v1/shipments(?<segment>/.*)?$, /envios$\{segment}'
 
+security:
+  cors:
+    allowed-origins: ${SECURITY_CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173}
+
 eureka:
   client:
     register-with-eureka: true

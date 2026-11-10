@@ -5,9 +5,20 @@ spring:
   datasource:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+  mail:
+    host: ${SMTP_HOST:localhost}
+    port: ${SMTP_PORT:1025}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
   jpa:
     hibernate:
       ddl-auto: ${JPA_DDL_AUTO:validate}
+
+mail:
+  notifications:
+    enabled: ${MAIL_NOTIFICATIONS_ENABLED:false}
+    from: ${SMTP_FROM:no-reply@logitrack.invalid}
+    poll-delay-ms: ${MAIL_POLL_DELAY_MS:5000}
 
 server:
   port: 8081

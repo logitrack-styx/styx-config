@@ -6,6 +6,11 @@ spring:
   datasource:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:localhost}
+    port: ${SPRING_RABBITMQ_PORT:5672}
+    username: ${SPRING_RABBITMQ_USERNAME:}
+    password: ${SPRING_RABBITMQ_PASSWORD:}
   jpa:
     hibernate:
       ddl-auto: validate
@@ -18,6 +23,10 @@ spring:
           courier-service:
             connectTimeout: 2000
             readTimeout: 3000
+
+shipment:
+  assignment:
+    messaging-enabled: ${ASSIGNMENT_MESSAGING_ENABLED:false}
 
 server:
   port: 8083
