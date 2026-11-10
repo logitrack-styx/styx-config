@@ -1,0 +1,23 @@
+payments:
+  environment: ${MP_ENV:TEST}
+  adapter: ${MP_ADAPTER:FAKE}
+  demo-fee: ${TEST_QUOTE_AMOUNT_ARS:3500.00}
+  quote-ttl-seconds: ${TEST_QUOTE_TTL_SECONDS:1800}
+  mp:
+    credentials-confirmed: ${MP_TEST_CREDENTIALS_CONFIRMED:false}
+    access-token: ${MP_ACCESS_TOKEN_TEST:}
+    webhook-secret: ${MP_WEBHOOK_SECRET_TEST:}
+    webhook-url: ${MP_WEBHOOK_PUBLIC_URL:}
+    return-base: ${MP_RETURN_BASE_URL:http://localhost:5173}
+    buyer-email: ${MP_TEST_BUYER_EMAIL:}
+    seller-id: ${MP_TEST_SELLER_ID:}
+    application-id: ${MP_TEST_APPLICATION_ID:}
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://eureka-server:8065/eureka/}
+  instance:
+    prefer-ip-address: true
